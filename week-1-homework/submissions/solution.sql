@@ -22,5 +22,47 @@
  --bonus
  11.select * from car_names where make like 'a%,%r';
  
+ 
+ 
+ 
+ 
+--solutions homework2
+
+--What is the name and the population of the most populated city in India
+
+2.SELECT Name, Population FROM city 
+                                           
+WHERE Population = (SELECT Max(Population) FROM city);
+
+-- Find which countries do not have a capital.
+
+ 3.SELECT Name, Population FROM country WHERE Population = (SELECT Population FROM country WHERE
+
+   Population IS NOT NULL ORDER BY Population ASC LIMIT 1);
+
+
+--Which country has the lowest population? List all if more than one
+4. SELECT Name, Population FROM city
+
+   ORDER BY Population ASC LIMIT 5;
+
+--What are the names of all the cities in Vietnam?
+
+ 5.select * from city where countrycode = 'vtn';
+
+--Find all the names of the districts in the Netherlands.
+
+9. SELECT DISTINCT district FROM city WHERE countrycode = "NLD";
+
+
+
+imdb
+select min(age) from actors where gender = 'f';
+select min(age) from actors where gender = 'm';
+select max(age) from actors where gender = 'm';
+select max(age) from actors where gender = 'f';
+
+
+ 
 
  
